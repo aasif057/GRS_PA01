@@ -8,8 +8,29 @@
 #define MAX_CMD_LEN 1000
 
 
-void tokenize_input(){}
-void execute_commands(){}
+void tokenize_input(char *input, char **args){
+     int i = 0;
+    char *token = strtok(input, " ");
+    while (token != NULL) {
+        args[i++] = token;  
+        token = strtok(NULL, " ");
+    }
+    args[i] = NULL;  // terminating the arguements by null
+}
+void execute_commands(char **args){
+    pid_t pid = fork();  // Create a child process
+
+    if (pid == 0) {  // Child process
+        if (execvp(args[0], args) == -1) {  // Executing the command
+            perror("Error executing command");
+        }
+        exit(EXIT_FAILURE);
+    } else if (pid < 0) {  // Error during fork
+        perror("Fork failed");
+    } else {  // Parent process
+        wait(NULL);  // Wait for the child to complete
+    }
+}
 
 int main() {
 
