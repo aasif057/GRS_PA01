@@ -19,11 +19,11 @@ The Custom Shell program is a simple command-line shell written in C that allows
 
 ## Project Structure
 
-The project consists of the following files:
-├── help.txt # Help documentation file to run the help builtin command
-├── Makefile # Makefile for building the project 
-├── shell.c # C source code for the custom shell
-├── Screenshot.png # C source code for the custom shell
+The project consists of the following files:\
+├── help.txt # Help documentation file to run the help builtin command\
+├── Makefile # Makefile for building the project \
+├── shell.c # C source code for the custom shell\
+├── Screenshot.png # C source code for the custom shell\
 
 
 ### Implementation
@@ -52,7 +52,7 @@ It also handles input and output redirection, storing the filenames for redirect
 Errors such as invalid commands, file I/O failures, or failure during fork() or execvp() are handled using perror() to print descriptive error messages to the user.
 
 ### Vizualization of the process tree
-I have visulized the custom shell and its child process by "pstree -p $(pgrep -f custom_shell)" command. 
+I have visulized the custom shell and its child process by "pstree -p $(pgrep -f custom_shell)" command. \
 "$(pgrep -f custom_shell)" finds the pid of the custom_shell and pass it to pstree -p which then prints the tree containing the child process and the pid of both the parent(custom_shell) process and the child process.
 
 
@@ -66,11 +66,11 @@ complie all the file using makefile by running make command in the terminal
 ## Usage
 
 Navigate to the project directory and run the following command
-$ make
-this will create an executable for the shell named "custom_shell"
+$ make\
+this will create an executable for the shell named "custom_shell"\
 
-$ ./custom_shell
-this will run our custom shell in the terminal where we can run or commands.
+$ ./custom_shell\
+this will run our custom shell in the terminal where we can run or commands.\
 
-$ make clean
+$ make clean\
 this will clean all the object and executables in the folder
