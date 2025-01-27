@@ -54,3 +54,21 @@ Errors such as invalid commands, file I/O failures, or failure during fork() or 
 ### Vizualization of the process tree
 I have visulized the custom shell and its child process by "pstree -p $(pgrep -f custom_shell)" command. 
 "$(pgrep -f custom_shell)" finds the pid of the custom_shell and pass it to pstree -p which then prints the tree containing the child process and the pid of both the parent(custom_shell) process and the child process.
+![Screenshot](https://github.com/user-attachments/assets/383e83b0-e26b-4094-83c6-be8e68035cdb)
+
+
+## Compilation
+
+complie all the file using makefile by running make command in the terminal
+
+## Usage
+
+Navigate to the project directory and run the following command
+$ make
+this will create an executable for the shell named "custom_shell"
+
+$ ./custom_shell
+this will run our custom shell in the terminal where we can run or commands.
+
+$ make clean
+this will clean all the object and executables in the folder
